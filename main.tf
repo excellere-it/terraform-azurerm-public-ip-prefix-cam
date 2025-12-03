@@ -54,7 +54,6 @@
 
 module "naming" {
   source  = "app.terraform.io/cardi/namer-cam/terraform"
-  version = "0.0.1"
 
   contact     = var.contact
   environment = var.environment
@@ -91,7 +90,6 @@ resource "azurerm_public_ip_prefix" "this" {
 module "diagnostics" {
   count   = var.diagnostics.enabled ? 1 : 0
   source  = "app.terraform.io/cardi/diagnostics-cam/azurerm"
-  version = "0.0.1"
 
   log_analytics_workspace_id = var.diagnostics.log_analytics_workspace_id
 
